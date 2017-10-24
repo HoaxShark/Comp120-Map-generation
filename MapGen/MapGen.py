@@ -72,7 +72,7 @@ class MapClass:
                     river_length = random.randint(MAP.RIVER_MIN, MAP.RIVER_LENGTH)
                     temp_riv = pygame.image.load(MAP.RIVER_TILE[0][0]).convert()  # Load river start image
                     surf.blit(temp_riv, (x * MAP.BLOCK_SIZE, y * MAP.BLOCK_SIZE))
-                    placey += 1
+                    placey += 1  # Move down one tile
                     ran_tile = random.randint(4, 5)  # Get random number for either left or right tile
 
                     for i in range(0, river_length):  # Loops until river length is met
@@ -81,7 +81,7 @@ class MapClass:
 
                         if ran_tile == 4:  # If tile is BEND_LEFT
                             surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                            placex -= 1
+                            placex -= 1  # Move left one tile
                             ran_tile = random.randint(4, 7) # Gets random bend tile
 
                             if end == river_length:  # Places end part of river relative to the direction
@@ -94,11 +94,11 @@ class MapClass:
                                 temp_riv = pygame.image.load(MAP.RIVER_TILE[3][0]).convert()
                                 for i in range(0, ran_length):  # Blit horizontal tiles to the amount of ran_length
                                     surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                                    placex -= 1
+                                    placex -= 1  # Move left one tile
 
                         elif ran_tile == 5:  # If tile is BEND_RIGHT
                             surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                            placex += 1
+                            placex += 1  # Move right one tile
                             ran_tile = random.randint(4, 7)  # Get random bend tile
 
                             if end == river_length:  # Places end part of river relative to the direction
@@ -111,11 +111,11 @@ class MapClass:
                                 temp_riv = pygame.image.load(MAP.RIVER_TILE[3][0]).convert()
                                 for i in range(0, ran_length):  # Blit horizontal tiles to the amount of ran_length
                                     surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                                    placex += 1
+                                    placex += 1  # Move right one tile
 
                         elif ran_tile == 6:  # If tile is LEFT_DOWN
                             surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                            placey += 1
+                            placey += 1  # Move down one tile
                             ran_tile = random.randint(4, 7)  # Get random bend tile
 
                             if end == river_length:  # Places end part of river relative to the direction
@@ -128,24 +128,24 @@ class MapClass:
                                 temp_riv = pygame.image.load(MAP.RIVER_TILE[2][0]).convert()
                                 for i in range(0, ran_length):  # Blit vertical tiles to the amount of ran_length
                                     surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                                    placey += 1
+                                    placey += 1  # Move down one tile
 
                         elif ran_tile == 7:  # If tile is RIGHT_DOWN
                             surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                            placey += 1
+                            placey += 1  # Move down one tile
                             ran_tile = random.randint(4, 7)  # Get random bend tile
 
                             if end == river_length:  # Places end part of river relative to the direction
                                 temp_riv = pygame.image.load(MAP.RIVER_TILE[1][0]).convert()
                                 surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
 
-                            elif ran_tile is not 4 or 5:
+                            elif ran_tile is not 4 or 5:  # If not BEND_LEFT or BEND_RIGHT
                                 ran_tile = random.randint(4, 5)
                                 ran_length = random.randint(1, 2)
                                 temp_riv = pygame.image.load(MAP.RIVER_TILE[2][0]).convert()
                                 for i in range(0, ran_length):  # Blit vertical tiles to the amount of ran_length
                                     surf.blit(temp_riv, (placex * MAP.BLOCK_SIZE, placey * MAP.BLOCK_SIZE))
-                                    placey += 1
+                                    placey += 1  # Move down one tile
 
         return surf
 
