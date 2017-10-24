@@ -29,7 +29,7 @@ class MAP:
 
 class MapClass:
     """Fully extendible mapclass, image size and spawn weights can be edited"""
-    Map = [[0 for x in range(0,MAP.SIZE_X)]for y in range(0,MAP.SIZE_X)]  # generates a 2d array for Map size
+    Map = [[0 for x in range(0,MAP.SIZE_X)]for y in range(0,MAP.SIZE_X)]  # Generates a 2d array for Map size
     img = pygame.Surface((MAP.SIZE_X,MAP.SIZE_Y))
 
     def __init__(self, seed=0):
