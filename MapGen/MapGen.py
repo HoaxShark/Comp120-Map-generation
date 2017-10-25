@@ -3,7 +3,7 @@ import random
 
 
 class MAP:
-    SEA_CHANCE = 20
+    SEA_CHANCE = 20  # Larger number, lower sea chance
     BLOCK_SIZE = 80
     SIZE_Y = 60
     SIZE_X = 60
@@ -17,7 +17,7 @@ class MAP:
     SEA_TILE = [  # Information on sea tiles (filename)
                 ["Images/Sea/Sand.jpg"],
                 ["Images/Sea/Sea.jpg"],
-        ]
+    ]
 
 
 class MapClass:
