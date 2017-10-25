@@ -48,8 +48,6 @@ class MapClass:
                 ret.blit(temp_img, (x * MAP.BLOCK_SIZE, y * MAP.BLOCK_SIZE))
         self.img = ret
 
-    def draw_forest(self):
-        print
 
 screen = pygame.display.set_mode((800, 500))
 Map = MapClass()
