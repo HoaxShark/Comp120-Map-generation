@@ -6,4 +6,4 @@ python:
 
 script: 
 
-  - python MapGen.py
+  - python MapGen/MapGen.py
